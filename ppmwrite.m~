@@ -1,16 +1,14 @@
-function pgmwrite(I,l,mode)
-%PGMWRITE Writes a data matrix into a pgm file.
+function ppmwrite(I,w,h,l,mode)
+%PGMWRITE Writes a data matrix into a ppm file.
 % Input Parameters: 
 %                I: Matrix to write in pgm
 %            (w,h): dimension of matrix
 %                l: gray levels
 %             mode: ASCII or Binary (1 for Ascii and 0 for Binary)
 
-[w,h] = size(I);    % size of the image is the dimens
-
 % open the file in read mode
-if (mode == 1) ; % Ascii mode
-    f = fopen('outascii.pgm','w');
+if (mode == 1) ; % Ascii flag
+    f= fopen('outascii.pgm','w');
     fprintf(f,'P2\n');
     fprintf(f,'#Image created by Ziqian Chen\n');   % Signature.
     fprintf(f,'\n# image width\n');
@@ -28,7 +26,7 @@ if (mode == 1) ; % Ascii mode
         end
     end    
   
-else            % Binary mode
+else
     f = fopen('outbinary.pgm','w');
     fprintf(f,'P5\n');
     fprintf(f,'#Image created by Ziqian Chen\n');   % Signature.
