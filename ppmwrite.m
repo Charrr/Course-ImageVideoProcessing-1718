@@ -5,9 +5,7 @@ function ppmwrite(I,l,mode)
 %                l: colour levels
 %             mode: ASCII or Binary (1 for Ascii and 0 for Binary)
 
-[m,n] = size(I(:,:,1));    % dimension of the matrix
-w = m/3;            % 3 values per pixel (R,G,B)
-h = n;
+[w,h] = size(I(:,:,1));     % size of the image is the dimension of the matrix
 
 % open the file in read mode
 if (mode == 1) ; % Ascii mode
