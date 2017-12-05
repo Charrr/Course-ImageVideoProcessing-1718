@@ -1,10 +1,10 @@
-function [I,level] = pgmread(path)
+function [M,level] = pgmread(path)
 %PGMREAD Reads a pgm file into a data matrix.
 % Title: QMUL_ppmread
 % Modified by Ziqian Chen.
 % Input Parameter: path of the pgm file
 % Output Parameters:
-%                I: the data matrix
+%                M: the data matrix
 %                l: grey levels
 
 % open the file in read mode
@@ -21,9 +21,8 @@ if ((strcmp(a,'P5')==0) && (strcmp(a,'P2')==0))
     while(a(1)=='#')
         a = fscanf(f,'%s',1);
     end
-    error('it''s not a pgm file');
+    error('It''s not a pgm file. Try using ppmread instead.');
 else
-    display('it is a pgm file');
     if(strcmp(a,'P2'))
         A = 1;      % it is in ASCII mode
     end
@@ -50,7 +49,7 @@ else
     if (A == 1)
         for i = 1:h
             for j = 1:w
-                I(i,j) = fscanf(f,'%i',1); % Greyscale
+                M(i,j) = fscanf(f,'%i',1); % Greyscale
             end
         end
     else
@@ -62,7 +61,7 @@ else
         for i = 1:h
             for j = 1:w
                 index = index+1;
-                I(i,j) = Arr(index);
+                M(i,j) = Arr(index);
             end
         end
     end

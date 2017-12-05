@@ -1,8 +1,8 @@
-function [I,level] = ppmread(path)
+function [M,level] = ppmread(path)
 %PPMREAD Reads a ppm file into a data matrix.
 % Input Parameter: path of the ppm file
 % Output Parameters:
-%                I: the data matrix
+%                M: the data matrix
 %                l: colour levels
 
 % open the file in read mode
@@ -19,9 +19,8 @@ if ((strcmp(a,'P3')==0) && (strcmp(a,'P6')==0)) % neither P3 nor P6
     while(a(1)=='#')
         a = fscanf(f,'%s',1);
     end
-    error('it''s not a ppm file');
+    error('It''s not a ppm file. Try using pgmread instead.');
 else
-    display('it is a ppm file');
     if(strcmp(a,'P3'))
         A = 1;      % ASCII mode
     end
@@ -49,9 +48,9 @@ else
     if (A == 1)     % if it's in ascii mode
         for i = 1:h
             for j = 1:w
-                I(i,j,1) = fscanf(f,'%i',1); % Red
-                I(i,j,2) = fscanf(f,'%i',1); % Green
-                I(i,j,3) = fscanf(f,'%i',1); % Blue
+                M(i,j,1) = fscanf(f,'%i',1); % Red
+                M(i,j,2) = fscanf(f,'%i',1); % Green
+                M(i,j,3) = fscanf(f,'%i',1); % Blue
             end
         end
     else            % if it's in binary mode
@@ -63,11 +62,11 @@ else
         for i = 1:h
             for j = 1:w
                 index = index+1;
-                I(i,j,1) = Arr(index);
+                M(i,j,1) = Arr(index);
                 index = index+1;
-                I(i,j,2) = Arr(index);
+                M(i,j,2) = Arr(index);
                 index = index+1;
-                I(i,j,3) = Arr(index);
+                M(i,j,3) = Arr(index);
             end
         end
     end
