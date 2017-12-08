@@ -42,7 +42,7 @@ else            % Binary mode
     
     for i=1:w
         for j=1:h
-            fprintf(f,'%c',M(i,j));
+            fwrite( f, M(i,j), 'uint8' );
         end
     end
     

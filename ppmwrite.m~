@@ -44,9 +44,12 @@ else            % Binary mode
     
     for i=1:w
         for j=1:h
-            fwrite( f, M(i,j,1), 'uint8' ); % R
-            fwrite( f, M(i,j,2), 'uint8' ); % G
-            fwrite( f, M(i,j,3), 'uint8' ); % B
+            fprintf(f,'%c',M(i,j,1)); % R
+fwrite( f, M(i,j), 'uint8' );
+            fprintf(f,'%c',M(i,j,2)); % G
+                        fwrite( f, M(i,j), 'uint8' );
+            fprintf(f,'%c',M(i,j,3)); % B
+                        fwrite( f, M(i,j), 'uint8' );
         end
     end
     
