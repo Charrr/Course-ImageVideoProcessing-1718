@@ -6,6 +6,7 @@ function [X,map] = pgmread(filename)
 %
 %   [X,MAP] = PGMREAD('FILENAME') reads the file 'FILENAME' and returns
 %   the indexed image X and associated color map MAP.
+%   Note: the data type for the X map is double.
 %
 %   If file name has no suffix, '.pgm' is used.
 %
@@ -164,5 +165,7 @@ else                            % Intensity graymap.
    X = zeros( cols, rows );     % Initialize intensity matrix.
    X(1:count) = data;           % Fill read data into matrix.
    X = X'/maxval;               % Map values to [0,1] interval.
+   
+X = double(X);
 
 end

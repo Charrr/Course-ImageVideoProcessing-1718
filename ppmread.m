@@ -1,9 +1,9 @@
 function [M,level] = ppmread(path)
 %PPMREAD Reads a ppm file into a data matrix.
 % Input Parameter: path of the ppm file
-% Output Parameters:
-%                M: the data matrix
-%                l: colour levels
+% Output Parameters: (Data type: double)
+% 	M: the data matrix
+% 	l: colour levels
 
 % open the file in read mode
 f = fopen(path,'r');
@@ -70,5 +70,7 @@ else
             end
         end
     end
+    
+    M = double(M);  % Convert the data type to double, in case of uint8.
 end
 

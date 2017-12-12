@@ -1,11 +1,9 @@
 function [M,level] = pgmread(path)
 %PGMREAD Reads a pgm file into a data matrix.
-% Title: QMUL_ppmread
-% Modified by Ziqian Chen.
 % Input Parameter: path of the pgm file
 % Output Parameters:
-%                M: the data matrix
-%                l: grey levels
+%   M: the data matrix (Data type: double)
+%	l: grey levels
 
 % open the file in read mode
 f = fopen(path,'r');
@@ -65,4 +63,6 @@ else
             end
         end
     end
+    
+    M = double(M);  % Convert the data type to double, in case of uint8.
 end

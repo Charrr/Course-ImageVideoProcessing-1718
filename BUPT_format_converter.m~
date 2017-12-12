@@ -5,7 +5,7 @@ function [ out ] = BUPT_format_converter( in, arg )
 %   Output Parameters:
 %           out: 3-dimensional YUV/RGB data matrix
 
-if nargin == 1      % id arg not specified
+if nargin == 1
     
     R = in(:,:,1);
     G = in(:,:,2);
@@ -17,17 +17,13 @@ if nargin == 1      % id arg not specified
     
     out = cat(3,Y,U,V);
     
-else if strcmp(arg, 'inverse')  % if arg specified to be the inverse transform
+else if strcmp(arg, 'inverse')
         
         Y = in(:,:,1);
         U = in(:,:,2);
         V = in(:,:,3);
         
-        R = round( 1.1641*Y - 0.0018*U + 1.5958*V - 222.6580 );
-        G = round( 1.1641*Y - 0.3914*U - 0.8135*V + 135.6041 );
-        B = round( 1.1641*Y + 2.0178*U - 0.0012*V - 276.7485 );
-        
-        out = cat(3,R,G,B);
+        R = round( 1.1641*Y - 0.0018*U
         
     else
         error('To use the inverse conversion, name the second argument ''inverse''.');
