@@ -1,7 +1,8 @@
 function [ out ] = BUPT_format_converter( in, arg )
-%Transforms images between RGB and YUV colour models.
+%1b Transforms images between RGB and YUV colour models.
 %   Input Parameters:
 %           in: 3-dimensional RGB/YUV data matrix
+%           arg: set as 'inverse' to perform a YUV-to-RGB transform
 %   Output Parameters:
 %           out: 3-dimensional YUV/RGB data matrix
 
