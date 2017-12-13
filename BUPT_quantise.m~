@@ -1,0 +1,14 @@
+function [ out ] = BUPT_quantise( in, l, q )
+%2a Quantises a greyscale image by factor q
+%   Input:
+%       in: input RGB matrix
+%       l: greyscale level of the input image
+%       q: quantisation factor (dyadic)
+%   Output:
+%       out: output RGB matrix
+
+n = l/q;    % Quantised image will contain n levels.
+
+
+end
+

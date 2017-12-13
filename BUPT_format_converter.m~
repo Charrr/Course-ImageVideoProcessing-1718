@@ -16,7 +16,7 @@ if nargin == 1      % id arg not specified
     U = round( -0.148*R - 0.291*G + 0.439*B + 128 );
     V = round( 0.439*R - 0.368*G - 0.071*B + 128 );
     
-    OUT = cat(3,Y,U,V);
+    out = cat(3,Y,U,V);
     
 else if strcmp(arg, 'inverse')  % if arg specified to be the inverse transform
         
@@ -28,7 +28,7 @@ else if strcmp(arg, 'inverse')  % if arg specified to be the inverse transform
         G = round( 1.1641*Y - 0.3914*U - 0.8135*V + 135.6041 );
         B = round( 1.1641*Y + 2.0178*U - 0.0012*V - 276.7485 );
         
-        OUT = cat(3,R,G,B);
+        out = cat(3,R,G,B);
         
     else
         error('To use the inverse conversion, name the second argument ''inverse''.');
