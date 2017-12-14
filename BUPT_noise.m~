@@ -1,8 +1,4 @@
 function [ OUT ] = BUPT_noise(IN, noiseModel, sigma)
-% Title: ex4a
-% Description: This function adds different types of noise and caculates the valuse of MSE and PSNR
-% Input type 1 for Gaussian, 2 for salt and pepper, if the type is 2, the value is not needed
-
 %4a Equalises grey-scale images based on their histogram
 %   Input:
 %       IN: input greyscale matrix
@@ -15,7 +11,7 @@ function [ OUT ] = BUPT_noise(IN, noiseModel, sigma)
 % add noise
 [h, w] = size(IN);
 
-if noiseModel == 1
+if noiseModel == 1strcmp(interpolate, 'n') || strcmp(interpolate, 'nearest')
     noiseI=imnoise(IN,'gaussian',0,sigma);
 elseif noiseModel == 2
     noiseI=imnoise(IN,'salt & pepper');

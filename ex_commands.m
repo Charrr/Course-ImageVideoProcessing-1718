@@ -51,6 +51,12 @@ LENA_RGB_inverted = BUPT_invert(LENA_RGB, l);
 
 
 %%%%% 4a
-BUPT_noise(uint8(LENA_grey), 1, 0.05);
+BUPT_noise(uint8(LENA_grey), 'g', 0.05);
+BUPT_noise(uint8(LENA_grey), 's');
+
+%%%%% 4b
+BUPT_up(LENA_RGB, 'n', 0.15);
+BUPT_up(LENA_RGB, 'b', 0.15);
+BUPT_up(LENA_RGB, 'both', 0.15);
 
 
