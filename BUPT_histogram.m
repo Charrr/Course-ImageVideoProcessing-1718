@@ -1,7 +1,7 @@
 function [ H ] = BUPT_histogram( IN, l )
-%2b Presents the histogram of a given image.
+%2b Presents the histogram of a given greyscale image.
 %   Input:
-%       IN: input RGB matrix
+%       IN: input greyscale matrix
 %       l:  colour level of the image
 %   Output:
 %       H: histogram values
@@ -15,7 +15,9 @@ for i=1:h
     end
 end
 
-% draw the image
+H = H/(w*h);    % normalise
 figure, bar(0:l, H, 'k'); title('Histogram');
+
+imshow(uint8(OUT));
 
 end

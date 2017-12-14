@@ -21,5 +21,7 @@ end
 OUT = kron(M, ones(x,y));   % interpolate
 OUT = OUT(1:w, 1:h);        % truncate the image into its original size
 
+imshow(uint8(OUT));
+
 end
 

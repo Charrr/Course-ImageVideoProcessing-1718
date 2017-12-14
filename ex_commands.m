@@ -33,7 +33,18 @@ PEPPERS_grey_quan128 = BUPT_quantise(PEPPERS_grey,128);
 
 
 %%%%% 2b
+H = BUPT_histogram(LENA_grey, l);
 
 
+%%%%% 2c
+
+
+
+%%%%% 2d
+
+
+%%%%% 3a
+LENA_grey_inverted = BUPT_invert(LENA_grey, l);
+LENA_RGB_inverted = BUPT_invert(LENA_RGB, l);
 
 

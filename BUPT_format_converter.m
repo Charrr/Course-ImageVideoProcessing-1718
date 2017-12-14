@@ -35,6 +35,7 @@ else if strcmp(arg, 'inverse')  % if arg specified to be the inverse transform
         
     end
     
+    imshow(uint8(OUT));
     
 end
 
