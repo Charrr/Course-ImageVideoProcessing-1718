@@ -18,6 +18,4 @@ end
 H = H/(w*h);    % normalise
 figure, bar(0:l, H, 'k'); title('Histogram');
 
-imshow(uint8(OUT));
-
 end
