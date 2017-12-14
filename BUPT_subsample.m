@@ -1,11 +1,11 @@
 function [ OUT ] = BUPT_subsample( IN, x, y )
 %1c Subsamples the image by x horizontal and y vertical pixels
 %   Input:
-%       in: input RGB matrix
+%       IN: input RGB matrix
 %       x: horizontal sampling rate
 %       y: vertical sampling rate
 %   Output:
-%       out: output sampled RGB matrix
+%       OUT: output sampled RGB matrix
 
 [w, h] = size(IN);  % width and height of the input matrix
 a = ceil(w/x);      % a samples every row

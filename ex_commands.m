@@ -32,3 +32,8 @@ PEPPERS_grey_quan128 = BUPT_quantise(PEPPERS_grey,128);
 % pgmwrite(PEPPERS_grey_quan128, l, 0, '2a_PEPPERS_grey_quan128');
 
 
+%%%%% 2b
+
+
+
+
