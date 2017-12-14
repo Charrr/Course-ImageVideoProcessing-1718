@@ -47,4 +47,10 @@ H = BUPT_histogram(LENA_grey, l);
 LENA_grey_inverted = BUPT_invert(LENA_grey, l);
 LENA_RGB_inverted = BUPT_invert(LENA_RGB, l);
 
+%%%%% 3b
+
+
+%%%%% 4a
+BUPT_noise(uint8(LENA_grey), 1, 0.05);
+
 
