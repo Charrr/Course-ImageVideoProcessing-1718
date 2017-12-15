@@ -9,7 +9,7 @@ BABOON_grey = pgmread('img2014/Baboon512_binary2014.pgm');
 LENA_grey = pgmread('img2014/Lena512_Binary2014.pgm');
 PEPPERS_grey = pgmread('img2014/Peppers512_binary2014.pgm');
 
-CZQ_RGB = imread('img2014/czq.jpg');
+CZQ_RGB = double(imread('img2014/czq.jpg'));
 CZQ_grey = BUPT_format_converter(CZQ_RGB);
 CZQ_grey = CZQ_grey(:,:,1);
 CZQ_RGBnamed = insertText(CZQ_RGB, [20,400], 'CHEN ZIQIAN', 'Font', 'Arial', 'FontSize', 72, 'BoxOpacity', 0, 'TextColor', 'white');

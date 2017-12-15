@@ -60,3 +60,7 @@ BUPT_up(LENA_RGB, 'b', 0.15);
 BUPT_up(LENA_RGB, 'both', 0.15);
 
 
+%%%%% 5a
+BUPT_lowpass(LENA_RGB, 50, 7);
+BUPT_rect(LENA_RGB, [5,5]);
+
