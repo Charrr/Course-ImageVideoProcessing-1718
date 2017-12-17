@@ -4,12 +4,18 @@
 LENA_YUV = BUPT_format_converter(LENA_RGB);
 LENA_Y = LENA_YUV(:,:,1);
 LENA_RGB2 = BUPT_format_converter(LENA_YUV, 'inverse');
-
-pgmwrite(LENA_Y, l, 1, '1b_LENA');
-imwrite(uint8(LENA_Y), '../results/jpg/1b_LENA_Y.jpg');
-% ppmwrite(LENA_RGB2, l, 0, '1b_LENA_recovered');
+BABOON_YUV = BUPT_format_converter(BABOON_RGB);
+BABOON_Y = BABOON_YUV(:,:,1);
 BABOON_RGB2 = BUPT_format_converter(BABOON_YUV, 'inverse');
-% pgmwrite(BABOON_YUV(:,:,1), l, 0, '1b_BABOON');
+
+imwrite(uint8(LENA_Y), '../results/jpg/1b-LENA_Y.jpg');
+imwrite(uint8(BABOON_Y), '../results/jpg/1b-BABOON_Y.jpg');
+imwrite(uint8(LENA_RGB2), '../results/jpg/1b-LENA_recovered.jpg');
+imwrite(uint8(BABOON_RGB2), '../results/jpg/1b-BABOON_recovered.jpg');
+% pgmwrite(LENA_Y, l, 0, '1b-LENA_Y');
+% pgmwrite(BABOON_Y, l, 0, '1b-BABOON_Y');
+% ppmwrite(LENA_RGB2, l, 0, '1b-LENA_recovered');
+% ppmwrite(BABOON_RGB2, l, 0, '1b-BABOON_recovered');
 
 
 %%%%% 1c

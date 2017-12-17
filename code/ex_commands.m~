@@ -4,9 +4,13 @@
 LENA_YUV = BUPT_format_converter(LENA_RGB);
 LENA_Y = LENA_YUV(:,:,1);
 LENA_RGB2 = BUPT_format_converter(LENA_YUV, 'inverse');
-pgmwrite(LENA_Y, l, 1, '1b_LENA');
-% ppmwrite(LENA_RGB2, l, 0, '1b_LENA_recovered');
-BABOON_RGB2 = BUPT_format_converter(BABOON_YUV, 'inverse');
+BABOON_YUV = BUPT_format_converter(BABOON_RGB);
+BABOON_Y = BABOON_YUV(:,:,1);
+
+pgmwrite(LENA_Y, l, 1, '1b-LENA');
+ppmwrite(LENA_RGB2, l, 0, '1b-LENA_recovered');
+imwrite(uint8(LENA_Y), '../results/jpg/1b_LENA_Y.jpg');
+% BABOON_RGB2 = BUPT_format_converter(BABOON_YUV, 'inverse');
 % pgmwrite(BABOON_YUV(:,:,1), l, 0, '1b_BABOON');
 
 

@@ -29,7 +29,7 @@ if (mode == 1) ; % Ascii mode
     end
     
 else            % Binary mode
-    f = fopen(strcat('output/',filename,'_Binary.pgm'),'w');
+    f = fopen(strcat('../results/pgmppm/',filename,'_Binary.pgm'),'w');
     fprintf(f,'P5\n');
     fprintf(f,'# Image created by Ziqian Chen\n');   % Signature.
     fprintf(f,'# image width\n');
