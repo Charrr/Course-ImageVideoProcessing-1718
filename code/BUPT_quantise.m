@@ -9,6 +9,6 @@ function [ OUT ] = BUPT_quantise( IN, q )
 
 OUT = round(IN/q/2)*q*2;
 
-imshow(uint8(OUT));
+figure, imshow(uint8(OUT)); title(strcat('Quantised by ',num2str(q)));
 
 end

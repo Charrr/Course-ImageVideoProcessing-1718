@@ -21,7 +21,7 @@ end
 OUT = kron(M, ones(x,y));   % interpolate
 OUT = OUT(1:w, 1:h);        % truncate the image into its original size
 
-imshow(uint8(OUT));
+figure, imshow(uint8(OUT)); title(strcat('Subsampled',num2str(x),'by',num2str(y)));
 
 end
 

@@ -7,7 +7,6 @@ LENA_RGB2 = BUPT_format_converter(LENA_YUV, 'inverse');
 BABOON_YUV = BUPT_format_converter(BABOON_RGB);
 BABOON_Y = BABOON_YUV(:,:,1);
 BABOON_RGB2 = BUPT_format_converter(BABOON_YUV, 'inverse');
-
 imwrite(uint8(LENA_Y), '../results/jpg/1b-LENA_Y.jpg');
 imwrite(uint8(BABOON_Y), '../results/jpg/1b-BABOON_Y.jpg');
 imwrite(uint8(LENA_RGB2), '../results/jpg/1b-LENA_recovered.jpg');
@@ -23,10 +22,14 @@ LENA_grey_sub1 = BUPT_subsample(LENA_grey, 2, 1);
 LENA_grey_sub2 = BUPT_subsample(LENA_grey, 1, 2);
 LENA_grey_sub3 = BUPT_subsample(LENA_grey, 8, 2);
 LENA_grey_sub4 = BUPT_subsample(LENA_grey, 4, 4);
-% pgmwrite(LENA_grey_sub1, l, 0, '1c_LENA_subsample2by1');
-% pgmwrite(LENA_grey_sub2, l, 0, '1c_LENA_subsample1by2');
-% pgmwrite(LENA_grey_sub3, l, 0, '1c_LENA_subsample8by2');
-% pgmwrite(LENA_grey_sub4, l, 0, '1c_LENA_subsample4by4');
+imwrite(uint8(LENA_grey_sub1), '../results/jpg/1c-LENA_subsample2by1.jpg');
+imwrite(uint8(LENA_grey_sub2), '../results/jpg/1c-LENA_subsample1by2.jpg');
+imwrite(uint8(LENA_grey_sub3), '../results/jpg/1c-LENA_subsample8by2.jpg');
+imwrite(uint8(LENA_grey_sub4), '../results/jpg/1c-LENA_subsample4by4.jpg');
+% pgmwrite(LENA_grey_sub1, l, 0, '1c-LENA_subsample2by1');
+% pgmwrite(LENA_grey_sub2, l, 0, '1c-LENA_subsample1by2');
+% pgmwrite(LENA_grey_sub3, l, 0, '1c-LENA_subsample8by2');
+% pgmwrite(LENA_grey_sub4, l, 0, '1c-LENA_subsample4by4');
 
 
 %%%%% 2a
@@ -34,10 +37,15 @@ LENA_grey_quan2 = BUPT_quantise(LENA_grey,2);
 BABOON_grey_quan8 = BUPT_quantise(BABOON_grey,8);
 PEPPERS_grey_quan32 = BUPT_quantise(PEPPERS_grey,32);
 PEPPERS_grey_quan128 = BUPT_quantise(PEPPERS_grey,128);
-% pgmwrite(LENA_grey_quan2, l, 0, '2a_LENA_grey_quan2');
-% pgmwrite(BABOON_grey_quan8, l, 0, '2a_BABOON_grey_quan8');
-% pgmwrite(PEPPERS_grey_quan32, l, 0, '2a_PEPPERS_grey_quan32');
-% pgmwrite(PEPPERS_grey_quan128, l, 0, '2a_PEPPERS_grey_quan128');
+imwrite(uint8(LENA_grey_quan2), '../results/jpg/2a-LENA_grey_quan2.jpg');
+imwrite(uint8(BABOON_grey_quan8), '../results/jpg/2a-BABOON_grey_quan8.jpg');
+imwrite(uint8(PEPPERS_grey_quan32), '../results/jpg/2a-PEPPERS_grey_quan32.jpg');
+imwrite(uint8(PEPPERS_grey_quan128), '../results/jpg/2a-PEPPERS_grey_quan128.jpg');
+% pgmwrite(LENA_grey_quan2, l, 0, '2a-LENA_grey_quan2');
+% pgmwrite(BABOON_grey_quan8, l, 0, '2a-BABOON_grey_quan8');
+% pgmwrite(PEPPERS_grey_quan32, l, 0, '2a-PEPPERS_grey_quan32');
+% pgmwrite(PEPPERS_grey_quan128, l, 0, '2a-PEPPERS_grey_quan128');
+
 
 %%%%% 2b
 LENA_Histo = BUPT_histogram(LENA_grey, l);
