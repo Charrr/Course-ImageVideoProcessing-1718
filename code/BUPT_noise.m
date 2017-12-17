@@ -33,5 +33,6 @@ elseif colorType == 3 % for RGB
 end
 
 figure, imshow(uint8(OUT));
-title(strcat('MSE=',num2str(MSE),'      PSNR=',num2str(PSNR)));
+title(strcat('MSE=',num2str(MSE),', PSNR=',num2str(PSNR)));
+
 end

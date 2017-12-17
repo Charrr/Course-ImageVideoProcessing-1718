@@ -136,14 +136,44 @@ imwrite(uint8(CZQ_tran_s50_r20), '../results/jpg/3b-CZQ_skewed50 then rotated20.
 
 
 %%%%% 4a
-BUPT_noise(uint8(LENA_grey), 'g', 0.05);
-BUPT_noise(uint8(LENA_grey), 's');
+LENA_grey_SPnoise = BUPT_noise(uint8(LENA_grey), 's');
+LENA_grey_Gnoise1 = BUPT_noise(uint8(LENA_grey), 'g', 0.01);
+LENA_grey_Gnoise5 = BUPT_noise(uint8(LENA_grey), 'g', 0.05);
+PEPPERS_grey_SPnoise = BUPT_noise(uint8(PEPPERS_grey), 's');
+PEPPERS_grey_Gnoise2 = BUPT_noise(uint8(PEPPERS_grey), 'g', 0.02);
+PEPPERS_grey_Gnoise5 = BUPT_noise(uint8(PEPPERS_grey), 'g', 0.05);
+BABOON_grey_SPnoise = BUPT_noise(uint8(BABOON_grey), 's');
+BABOON_grey_Gnoise7 = BUPT_noise(uint8(PEPPERS_grey), 'g', 0.07);
+BABOON_grey_Gnoise10 = BUPT_noise(uint8(PEPPERS_grey), 'g', 0.1);
+imwrite(uint8(LENA_grey_SPnoise), '../results/jpg/4a-LENA_grey_SPnoise.jpg');
+imwrite(uint8(LENA_grey_Gnoise1), '../results/jpg/4a-LENA_grey_Gnoise1.jpg');
+imwrite(uint8(LENA_grey_Gnoise5), '../results/jpg/4a-LENA_grey_Gnoise5.jpg');
+imwrite(uint8(PEPPERS_grey_SPnoise), '../results/jpg/4a-PEPPERS_grey_SPnoise.jpg');
+imwrite(uint8(PEPPERS_grey_Gnoise2), '../results/jpg/4a-PEPPERS_grey_Gnoise2.jpg');
+imwrite(uint8(PEPPERS_grey_Gnoise5), '../results/jpg/4a-PEPPERS_grey_Gnoise5.jpg');
+imwrite(uint8(BABOON_grey_SPnoise), '../results/jpg/4a-BABOON_grey_SPnoise.jpg');
+imwrite(uint8(BABOON_grey_Gnoise7), '../results/jpg/4a-BABOON_grey_Gnoise7.jpg');
+imwrite(uint8(BABOON_grey_Gnoise10), '../results/jpg/4a-BABOON_grey_Gnoise10.jpg');
+% pgmwrite(LENA_grey_SPnoise, l, 0, '4a-LENA_grey_SPnoise');
+% pgmwrite(LENA_grey_Gnoise1, l, 0, '4a-LENA_grey_Gnoise1');
+% pgmwrite(LENA_grey_Gnoise5, l, 0, '4a-LENA_grey_Gnoise5');
+% pgmwrite(PEPPERS_grey_SPnoise, l, 0, '4a-PEPPERS_grey_SPnoise');
+% pgmwrite(PEPPERS_grey_Gnoise2, l, 0, '4a-PEPPERS_grey_Gnoise2');
+% pgmwrite(PEPPERS_grey_Gnoise5, l, 0, '4a-PEPPERS_grey_Gnoise5');
+% pgmwrite(BABOON_grey_SPnoise, l, 0, '4a-BABOON_grey_SPnoise');
+% pgmwrite(BABOON_grey_Gnoise7, l, 0, '4a-BABOON_grey_Gnoise7');
+% pgmwrite(BABOON_grey_Gnoise10, l, 0, '4a-BABOON_grey_Gnoise10');
 
 
 %%%%% 4b
-BUPT_up(LENA_RGB, 'n', 0.15);
-BUPT_up(LENA_RGB, 'b', 0.15);
-BUPT_up(LENA_RGB, 'both', 2);
+LENA_up = BUPT_up(LENA_RGB, 'n', 4.5);
+BABOON_up = BUPT_up(BABOON_RGB, 'b', 3.6);
+imwrite(uint8(LENA_up), '../results/jpg/4b-LENA_upNN45.jpg');
+imwrite(uint8(BABOON_up), '../results/jpg/4b-BABOON_upBilinear36.jpg');
+% ppmwrite(LENA_up, l, 0, '4b-LENA_upNN45');      % Warning: super slow...
+% ppmwrite(BABOON_up, l, 0, '4b-BABOON_upBilinear36');  % Warning: super slow...
+
+% BUPT_up(LENA_RGB, 'both', 4.5);
 
 
 %%%%% 5a
