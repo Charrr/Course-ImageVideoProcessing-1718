@@ -1,5 +1,14 @@
-function [OUT] = transform(IN,theta1,theta2,Rfirst)
-%*****************************************************
+function [ OUT ] = BUPT_transform( IN, theta1, theta2, RotateThenSkew )
+%3b Rotates an image with an angle theta1 and skews it with theta2
+%   Input Parameters:
+%           IN: input image matrix
+%           theta1: rotation angle (degree)
+%           theta2: skew angle (degree)
+%           RotateThenSkew: 1 if first rotate then skew, 0 otherwise.
+%           defalt as 1.
+%   Output Parameters:
+%           OUT: 3-dimensional YUV/RGB data matrix
+
 
 % read the image
 [h, w] = size(IN);
@@ -15,12 +24,20 @@ if theta2==0
 else
     S=[1 1/(tan(theta2)) 0;0 1 0;0 0 1];
 end
-if Rfirst==1    % If rotation first than skew
-    T=S*R;
-end
-if Rfirst==0
+
+if nargin == 4 && RotateThenSkew == 0
     T=R*S;
+else
+    T=S*R;      % default (rotation first than skew)
 end
+
+% if RotateThenSkew==1
+%     T=S*R;
+% end
+% if RotateThenSkew==0
+%     T=R*S;
+% end
+
 C1=T*[1 1 1]';
 C2=T*[w h 1]';
 C3=T*[1 h 1]';
@@ -59,3 +76,6 @@ end
 OUT = Inew;
 
 imshow(uint8(OUT));
+
+end
+

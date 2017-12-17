@@ -18,6 +18,8 @@ if nargin == 1      % id arg not specified
     
     OUT = cat(3,Y,U,V);
     
+    figure, imshow(uint8(OUT)); title('Converted to YUV');
+    
 elseif strcmp(arg, 'inverse')  % if arg specified to be the inverse transform
     
     Y = IN(:,:,1);
@@ -30,12 +32,14 @@ elseif strcmp(arg, 'inverse')  % if arg specified to be the inverse transform
     
     OUT = cat(3,R,G,B);
     
+    figure, imshow(uint8(OUT)); title('Converted to RGB');
+    
 else
     error('To use the inverse conversion, name the second argument ''inverse''.');
     
 end
 
-imshow(uint8(OUT));
+
 
 end
 

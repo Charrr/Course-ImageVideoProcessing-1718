@@ -1,16 +1,16 @@
 function ppmwrite(M,l,mode,filename)
 %PPMWRITE Writes a data matrix into a ppm file.
-% Input Parameters:
-%                M: 3-dimenstional data matrix (w*h*3)
-%                l: colour levels
-%             mode: ASCII or Binary (1 for Ascii and 0 for Binary)
-%         filename: give a name to the generated file
+% Input:
+%       M: 3-dimenstional data matrix (w*h*3)
+%       l: colour levels
+%       mode: ASCII or Binary (1 for Ascii and 0 for Binary)
+%       filename: give a name to the generated file
 
 [w,h] = size(M(:,:,1));     % size of the image is the dimension of the matrix
 
 % open the file in read mode
 if (mode == 1) ; % Ascii mode
-    f = fopen(strcat('output/',filename,'_Ascii.ppm'),'w');
+    f = fopen(strcat('../results/pgmppm/',filename,'_Ascii.ppm'),'w');
     fprintf(f,'P3\n');
     fprintf(f,'# Image created by Ziqian Chen\n');   % Signature.
     fprintf(f,'# image width\n');
@@ -31,7 +31,7 @@ if (mode == 1) ; % Ascii mode
     end
     
 else            % Binary mode
-    f = fopen(strcat('output/',filename,'_Binary.ppm'),'w');
+    f = fopen(strcat('./results/pgmppm/',filename,'_Binary.ppm'),'w');
     fprintf(f,'P6\n');
     fprintf(f,'# Image created by Ziqian Chen\n');   % Signature.
     fprintf(f,'# image width\n');
