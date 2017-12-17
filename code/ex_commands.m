@@ -52,17 +52,31 @@ LENA_Histo = BUPT_histogram(LENA_grey, l);
 BABOON_Histo = BUPT_histogram(BABOON_grey, l);
 PEPPERS_Histo = BUPT_histogram(PEPPERS_grey, l);
 
+
 %%%%% 2c
 LENA_equ = BUPT_equalise(LENA_grey, l);
 BABOON_equ = BUPT_equalise(BABOON_grey, l);
 PEPPERS_equ = BUPT_equalise(PEPPERS_grey, l);
+imwrite(uint8(LENA_equ), '../results/jpg/2c-LENA_grey_equalised.jpg');
+imwrite(uint8(BABOON_equ), '../results/jpg/2c-BABOON_grey_equalised.jpg');
+imwrite(uint8(PEPPERS_equ), '../results/jpg/2c-PEPPERS_grey_equalised.jpg');
+% pgmwrite(LENA_equ, l, 0, '2c-LENA_grey_equalised');
+% pgmwrite(BABOON_equ, l, 0, '2c-BABOON_grey_equalised');
+% pgmwrite(PEPPERS_equ, l, 0, '2c-PEPPERS_grey_equalised');
+
 
 %%%%% 2d
 [PEPPERS_grey_m1, PEPPERS_grey_m2] = BUPT_histo_model(LENA_grey, PEPPERS_grey);
+imwrite(uint8(PEPPERS_grey_m1), '../results/jpg/2d-PEPPERS_grey_modelled.jpg');
+imwrite(uint8(PEPPERS_grey_m2), '../results/jpg/2d-PEPPERS_grey_exponential modelled.jpg');
+% pgmwrite(PEPPERS_grey_m1, l, 0, '2d-PEPPERS_grey_modelled');
+% pgmwrite(PEPPERS_grey_m2, l, 0, '2d-PEPPERS_grey_exponential');
+
 
 %%%%% 3a
 LENA_grey_inverted = BUPT_invert(LENA_grey, l);
 LENA_RGB_inverted = BUPT_invert(LENA_RGB, l);
+
 
 %%%%% 3b
 CZQ_3b1 = BUPT_transform(CZQ_greynamed, -20, 30, 0);
