@@ -10,6 +10,7 @@ LENA_grey = pgmread('../dataset/Lena512_Binary2014.pgm');
 PEPPERS_grey = pgmread('../dataset/Peppers512_binary2014.pgm');
 
 CZQ_RGB = double(imread('../dataset/czq.jpg'));
+CZQ_RGB2 = double(imread('../dataset/czq2.jpg'));
 
 % CZQ_grey = BUPT_format_converter(CZQ_RGB);
 % CZQ_grey = CZQ_grey(:,:,1);

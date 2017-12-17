@@ -12,7 +12,7 @@ end
 
 OUT = l - IN;
 
-imshow(uint8(OUT));
+figure, imshow(uint8(OUT)); title('Negative inversion');
 
 end
 
