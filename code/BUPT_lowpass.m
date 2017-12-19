@@ -33,7 +33,7 @@ if sumh ~= 0,
 end
 
 OUT = imfilter(IN_noise,T,'symmetric');
-subplot(1,3,3), imshow(OUT); title('Filtered with lowpass');
+subplot(1,3,3), imshow(uint8(OUT)); title(strcat('Filtered with lowpass, sigma=', num2str(sigma)));
 
 end
 

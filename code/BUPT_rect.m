@@ -12,13 +12,14 @@ IN = uint8(IN);
 figure,
 subplot(1,3,1), imshow(IN); title('Original image');
 
-IN_noise = imnoise(IN,'gaussian', 0, 0.5);
+IN_noise = imnoise(IN,'gaussian', 0, 0.05);
 subplot(1,3,2), imshow(IN_noise); title('With noise');
 
 T=ones(size(sizeRect));
 T=T/(sum(T(:)));
 
 OUT = imfilter(IN_noise,T,'symmetric');
-subplot(1,3,3), imshow(OUT); title('Filtered with rectanglar');
+subplot(1,3,3), imshow(uint8(OUT));
+title(strcat('Filtered with rectanglar ', num2str(sizeRect(1)), 'by',num2str(sizeRect(2))));
 
 end

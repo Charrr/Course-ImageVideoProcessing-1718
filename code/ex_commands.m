@@ -166,22 +166,57 @@ imwrite(uint8(BABOON_grey_Gnoise10), '../results/jpg/4a-BABOON_grey_Gnoise10.jpg
 
 
 %%%%% 4b
-LENA_up = BUPT_up(LENA_RGB, 'n', 4.5);
-BABOON_up = BUPT_up(BABOON_RGB, 'b', 3.6);
-imwrite(uint8(LENA_up), '../results/jpg/4b-LENA_upNN45.jpg');
-imwrite(uint8(BABOON_up), '../results/jpg/4b-BABOON_upBilinear36.jpg');
-% ppmwrite(LENA_up, l, 0, '4b-LENA_upNN45');      % Warning: super slow...
-% ppmwrite(BABOON_up, l, 0, '4b-BABOON_upBilinear36');  % Warning: super slow...
+LENA_RGB_upNN = BUPT_up(LENA_RGB, 'n', 4.5);
+BABOON_RGB_upBilinear = BUPT_up(BABOON_RGB, 'b', 3.6);
+imwrite(uint8(LENA_RGB_upNN), '../results/jpg/4b-LENA_upNN45.jpg');
+imwrite(uint8(BABOON_RGB_upBilinear), '../results/jpg/4b-BABOON_upBilinear36.jpg');
+% ppmwrite(LENA_RGB_upNN, l, 0, '4b-LENA_upNN45');      % Warning: super slow...
+% ppmwrite(BABOON_RGB_upBilinear, l, 0, '4b-BABOON_upBilinear36');  % Warning: super slow...
 
 % BUPT_up(LENA_RGB, 'both', 4.5);
 
 
 %%%%% 5a
-BUPT_lowpass(LENA_RGB, 50, 7);
-BUPT_rect(LENA_RGB, [5,5]);
+LENA_RGB_lp05 = BUPT_lowpass(LENA_RGB, 50, 0.5);
+LENA_RGB_lp1 = BUPT_lowpass(LENA_RGB, 50, 1);
+LENA_RGB_lp2 = BUPT_lowpass(LENA_RGB, 50, 2);
+LENA_RGB_lp4 = BUPT_lowpass(LENA_RGB, 50, 4);
+LENA_RGB_lp7 = BUPT_lowpass(LENA_RGB, 50, 7);
+LENA_RGB_lp10 = BUPT_lowpass(LENA_RGB, 50, 10);
+imwrite(uint8(LENA_RGB_lp05), '../results/jpg/5a-LENA_RGB_lp05.jpg');
+imwrite(uint8(LENA_RGB_lp1), '../results/jpg/5a-LENA_RGB_lp1.jpg');
+imwrite(uint8(LENA_RGB_lp2), '../results/jpg/5a-LENA_RGB_lp2.jpg');
+imwrite(uint8(LENA_RGB_lp4), '../results/jpg/5a-LENA_RGB_lp4.jpg');
+imwrite(uint8(LENA_RGB_lp7), '../results/jpg/5a-LENA_RGB_lp7.jpg');
+imwrite(uint8(LENA_RGB_lp10), '../results/jpg/5a-LENA_RGB_lp10.jpg');
+% ppmwrite(LENA_RGB_lp05, l, 0, '5a-LENA_RGB_lp05');
+% ppmwrite(LENA_RGB_lp1, l, 0, '5a-LENA_RGB_lp1');
+% ppmwrite(LENA_RGB_lp2, l, 0, '5a-LENA_RGB_lp2');
+% ppmwrite(LENA_RGB_lp4, l, 0, '5a-LENA_RGB_lp4');
+% ppmwrite(LENA_RGB_lp7, l, 0, '5a-LENA_RGB_lp7');
+% ppmwrite(LENA_RGB_lp10, l, 0, '5a-LENA_RGB_lp10');
+LENA_RGB_rect55 = BUPT_rect(LENA_RGB, [5,5]);
+LENA_RGB_rect77 = BUPT_rect(LENA_RGB, [7,7]);
+imwrite(uint8(LENA_RGB_rect55), '../results/jpg/5a-LENA_RGB_rect55.jpg');
+imwrite(uint8(LENA_RGB_rect77), '../results/jpg/5a-LENA_RGB_rect77.jpg');
+% ppmwrite(LENA_RGB_rect55, l, 0, '5a-LENA_RGB_rect55');
+% ppmwrite(LENA_RGB_rect77, l, 0, '5a-LENA_RGB_rect77');
+
 
 %%%%% 5b
-BUPT_edge(LENA_RGB, 'p');
+LENA_grey_edgeSobel = BUPT_edge(LENA_grey, 's');
+PEPPERS_RGB_edgeSobel = BUPT_edge(PEPPERS_RGB, 's');
+LENA_grey_edgePrewitt = BUPT_edge(LENA_grey, 'p');
+PEPPERS_RGB_edgePrewitt = BUPT_edge(PEPPERS_RGB, 'p');
+imwrite(uint8(LENA_grey_edgeSobel), '../results/jpg/5b-LENA_grey_edgeSobel.jpg');
+imwrite(uint8(PEPPERS_RGB_edgeSobel), '../results/jpg/5b-PEPPERS_RGB_edgeSobel.jpg');
+imwrite(uint8(LENA_grey_edgePrewitt), '../results/jpg/5b-LENA_grey_edgePrewitt.jpg');
+imwrite(uint8(PEPPERS_RGB_edgePrewitt), '../results/jpg/5b-PEPPERS_RGB_edgePrewitt.jpg');
+% pgmwrite(LENA_grey_edgeSobel, l, 0, '5b-LENA_grey_edgeSobel');
+% ppmwrite(PEPPERS_RGB_edgeSobel, l, 0, '5b-PEPPERS_RGB_edgeSobel');
+% pgmwrite(LENA_grey_edgePrewitt, l, 0, '5b-LENA_grey_edgePrewitt');
+% ppmwrite(PEPPERS_RGB_edgePrewitt, l, 0, '5b-PEPPERS_RGB_edgePrewitt');
+
 
 %%%%% 6
 BUPT_log(LENA_RGB, 10, 3);

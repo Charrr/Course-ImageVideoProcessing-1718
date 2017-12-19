@@ -27,7 +27,8 @@ hy = double(imfilter(IN,Ty,'replicate'));
 h = ((hx.*hx)+(hy.*hy)).^0.5;
 OUT = uint8(h);
 
-imshow(uint8(OUT)); title(strcat('Edge detection with', strOper));
+figure, imshow(uint8(OUT)); 
+title(strcat('Edge detection with', strOper));
 
 end
 
