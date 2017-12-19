@@ -197,18 +197,43 @@ imwrite(uint8(LENA_RGB_lp10), '../results/jpg/5a-LENA_RGB_lp10.jpg');
 % ppmwrite(LENA_RGB_lp10, l, 0, '5a-LENA_RGB_lp10');
 LENA_RGB_rect55 = BUPT_rect(LENA_RGB, [5,5]);
 LENA_RGB_rect77 = BUPT_rect(LENA_RGB, [7,7]);
-imwrite(uint8(LENA_RGB_rect55), '../results/jpg/5b-LENA_RGB_rect55.jpg');
-imwrite(uint8(LENA_RGB_rect77), '../results/jpg/5b-LENA_RGB_rect77.jpg');
-ppmwrite(LENA_RGB_rect55, l, 0, '5a-LENA_RGB_rect55');
-ppmwrite(LENA_RGB_rect77, l, 0, '5a-LENA_RGB_rect77');
+imwrite(uint8(LENA_RGB_rect55), '../results/jpg/5a-LENA_RGB_rect55.jpg');
+imwrite(uint8(LENA_RGB_rect77), '../results/jpg/5a-LENA_RGB_rect77.jpg');
+% ppmwrite(LENA_RGB_rect55, l, 0, '5a-LENA_RGB_rect55');
+% ppmwrite(LENA_RGB_rect77, l, 0, '5a-LENA_RGB_rect77');
 
 
 %%%%% 5b
-LENA_RGB_edgePrewitt = BUPT_edge(LENA_RGB, 'p');
-LENA_RGB_edgePrewitt = BUPT_edge(LENA_RGB, 'p');
-LENA_RGB_edgePrewitt = BUPT_edge(LENA_RGB, 'p');
-LENA_RGB_edgePrewitt = BUPT_edge(LENA_RGB, 'p');
+LENA_grey_edgeSobel = BUPT_edge(LENA_grey, 's');
+PEPPERS_RGB_edgeSobel = BUPT_edge(PEPPERS_RGB, 's');
+LENA_grey_edgePrewitt = BUPT_edge(LENA_grey, 'p');
+PEPPERS_RGB_edgePrewitt = BUPT_edge(PEPPERS_RGB, 'p');
+imwrite(uint8(LENA_grey_edgeSobel), '../results/jpg/5b-LENA_grey_edgeSobel.jpg');
+imwrite(uint8(PEPPERS_RGB_edgeSobel), '../results/jpg/5b-PEPPERS_RGB_edgeSobel.jpg');
+imwrite(uint8(LENA_grey_edgePrewitt), '../results/jpg/5b-LENA_grey_edgePrewitt.jpg');
+imwrite(uint8(PEPPERS_RGB_edgePrewitt), '../results/jpg/5b-PEPPERS_RGB_edgePrewitt.jpg');
+% pgmwrite(LENA_grey_edgeSobel, l, 0, '5b-LENA_grey_edgeSobel');
+% ppmwrite(PEPPERS_RGB_edgeSobel, l, 0, '5b-PEPPERS_RGB_edgeSobel');
+% pgmwrite(LENA_grey_edgePrewitt, l, 0, '5b-LENA_grey_edgePrewitt');
+% ppmwrite(PEPPERS_RGB_edgePrewitt, l, 0, '5b-PEPPERS_RGB_edgePrewitt');
+
+
 %%%%% 6
-BUPT_log(LENA_RGB, 10, 3);
+LENA_grey_log1 = BUPT_log(LENA_grey, 1);
+PEPPERS_grey_log3 = BUPT_log(PEPPERS_grey, 3);
+BABOON_grey_log1 = BUPT_log(BABOON_grey, 1);
+BABOON_grey_log2 = BUPT_log(BABOON_grey, 2);
+BABOON_grey_log3 = BUPT_log(BABOON_grey, 3);
+imwrite(uint8(LENA_grey_log1), '../results/jpg/6-LENA_grey_log1.jpg');
+imwrite(uint8(PEPPERS_grey_log3), '../results/jpg/6-PEPPERS_grey_log3.jpg');
+imwrite(uint8(BABOON_grey_log1), '../results/jpg/6-BABOON_grey_log1.jpg');
+imwrite(uint8(BABOON_grey_log2), '../results/jpg/6-BABOON_grey_log2.jpg');
+imwrite(uint8(BABOON_grey_log3), '../results/jpg/6-BABOON_grey_log3.jpg');
+% pgmwrite(LENA_grey_log1, l, 0, '6-LENA_grey_log1');
+% pgmwrite(PEPPERS_grey_log3, l, 0, '6-PEPPERS_grey_log3');
+% pgmwrite(BABOON_grey_log1, l, 0, '6-BABOON_grey_log1');
+% pgmwrite(BABOON_grey_log2, l, 0, '6-BABOON_grey_log2');
+% pgmwrite(BABOON_grey_log3, l, 0, '6-BABOON_grey_log3');
 
-
+LENA_grey_log5ker15 = BUPT_log(LENA_grey, 5, 15);
+PEPPERS_grey_log4ker15 = BUPT_log(PEPPERS_grey, 4, 15);

@@ -10,7 +10,7 @@ function [ OUT ] = BUPT_log( IN, sigma, kernel )
 strTitle = strcat('sigma=', num2str(sigma));
 
 if nargin == 2
-    kernel = 10*sigma; % empirically
+    kernel = 6*sigma; % empirically
 else
 	strTitle = strcat(strTitle, ',  kernel=', num2str(kernel));
 end
@@ -73,7 +73,7 @@ for i=2:h-1
     end
 end
 
-OUT = OUT*255;  % thresholding
+OUT = OUT*255;  %
 
 figure, imshow(uint8(OUT)); title(strTitle);
 
