@@ -13,11 +13,10 @@ To run the programme,
 4) Images will be written in the folder /results/jpg or /results/pgmppm. <br>
    Of course you can empty all the images in there before executing 3).
 ## NOTE
-a) All the results have been written in both jpg files (as required) and ppm/pgm files (as I thought was required) <br>
-   To open any of these ppm/pgm files, there is a signature of my name embedded in the header.
+a) Due to the inconsistence of requirements between the instructions in the document and on QMplus, as well as the file size limitation on the submission page, I removed most of the generated pgm/pgm files and the docx report from my submission (they take up too much space). <br>
+However, the compele set of my coursework can be found on [my personal Github page](https://github.com/Charrr/Course-ImageVideoProcessing-1718). *All rights reserved* <br>
+b) Open any of these ppm/pgm files, there is a signature of my name embedded in the header (as required in the exercise).
 <br>
-b) In 'ex_commands.m' the statements for writing ppm/pgm files are commented, because they consume too much time. <br>
+c) In 'ex_commands.m' the statements for writing ppm/pgm files are commented, because they consume too much time. <br>
    You can un-comment them and execute if you wish.
 <br>
-c) All files have also been uploaded to [my personal Github page](https://github.com/Charrr/Course-ImageVideoProcessing-1718). <br>
-   All rights reserved.
