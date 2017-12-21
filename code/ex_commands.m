@@ -1,4 +1,9 @@
 % Commands for exercises 1-6
+%%%%% 1a
+BUPT_pgmwrite(LENA_grey, l, 0, '1a-LENA_grey');
+BUPT_pgmwrite(LENA_grey, l, 1, '1a-LENA_grey');
+BUPT_ppmwrite(LENA_RGB, l, 0, '1a-LENA_RGB');
+BUPT_ppmwrite(LENA_RGB, l, 1, '1a-LENA_RGB');
 
 %%%%% 1b
 LENA_YUV = BUPT_format_converter(LENA_RGB);
