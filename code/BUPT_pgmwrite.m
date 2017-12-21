@@ -1,4 +1,4 @@
-function pgmwrite(M,l,mode,filename)
+function BUPT_pgmwrite(M,l,mode,filename)
 %PGMWRITE Writes a data matrix into a pgm file.
 % Input:
 %       M: 2-dimensional data matrix (w*h)

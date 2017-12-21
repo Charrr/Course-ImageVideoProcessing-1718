@@ -1,4 +1,4 @@
-function ppmwrite(M,l,mode,filename)
+function BUPT_ppmwrite(M,l,mode,filename)
 %PPMWRITE Writes a data matrix into a ppm file.
 % Input:
 %       M: 3-dimenstional data matrix (w*h*3)
