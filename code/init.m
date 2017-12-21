@@ -10,8 +10,9 @@ LENA_grey = pgmread('../dataset/Lena512_Binary2014.pgm');
 PEPPERS_grey = pgmread('../dataset/Peppers512_binary2014.pgm');
 
 CZQ_RGB = double(imread('../dataset/czq.jpg'));
-CZQ_RGB2 = double(imread('../dataset/czq2.jpg'));
+CZQ2_grey = double(imread('../dataset/czq2_grey.jpg'));
 
+% CZQ2_RGB = double(imread('../dataset/czq2.jpg'));
 % CZQ_grey = BUPT_format_converter(CZQ_RGB);
 % CZQ_grey = CZQ_grey(:,:,1);
 % CZQ_RGBnamed = insertText(CZQ_RGB, [0,200], 'CHEN ZIQIAN', 'Font', 'Arial', 'FontSize', 72, 'BoxOpacity', 0.5, 'TextColor', 'magenta');

@@ -17,7 +17,6 @@ function [ OUT ] = BUPT_transform( IN, th1, th2, RotateOrSkewFirst )
 theta1=th1/180*pi;
 theta2=-(90-th2)/180*pi;
 
-% compute the max W and H of the new image
 R=[cos(theta1) -sin(theta1) 0;sin(theta1) cos(theta1) 0;0 0 1];
 if theta2==0
     S=[1 0 0;0 1 0;0 0 1];
@@ -31,23 +30,17 @@ else
     T=S*R;      % default (rotation first than skew)
 end
 
-% if RotateThenSkew==1
-%     T=S*R;
-% end
-% if RotateThenSkew==0
-%     T=R*S;
-% end
-
 C1=T*[1 1 1]';
 C2=T*[w h 1]';
 C3=T*[1 h 1]';
 C4=T*[w 1 1]';
+% Adjust to the new size
 NewMax=max(C1,max(C2,max(C3,C4)));
 NewMin=min(C1,min(C2,min(C3,C4)));
 NewMax=round(NewMax);
 NewMin=round(NewMin);
 
-% Initialize
+% Initialise
 IN_new = zeros(NewMax(2)-NewMin(2)+1,1+NewMax(1)-NewMin(1));
 
 % rotation

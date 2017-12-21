@@ -26,7 +26,7 @@ pt=histt/(h2*w2);
 
 s=[];
 for i=1:256
-    s=[s sum(pt(1:i))];
+    s=[s, sum(pt(1:i))];
 end
 
 index=[];
@@ -54,14 +54,13 @@ subplot(2,3,4), imhist(uint8(IN1)); title('Histogram of A');
 subplot(2,3,5), imhist(uint8(IN2)); title('Histogram of B');
 subplot(2,3,6), imhist(uint8(OUT1)); title('Histogram of modelled B');
 
-
 for i=-255:0
     e(i+256)=1.6^(i/16);
 end;
 
 G=[];
 for i=1:256
-    G=[G e(i)];
+    G = [G, e(i)];
 end
 
 
@@ -71,13 +70,13 @@ pt=histt/(h2*w2);
 
 s=[];
 for i=1:256
-    s=[s sum(pt(1:i))];
+    s=[s, sum(pt(1:i))];
 end
 
 for i=1:256
     tmp{i}=G-s(i);
     tmp{i}=abs(tmp{i});
-    [a index(i)]=min(tmp{i});
+    [a, index(i)]=min(tmp{i});
 end
 
 imgn=zeros(h2,w2);
