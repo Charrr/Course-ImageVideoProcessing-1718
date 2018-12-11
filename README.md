@@ -3,7 +3,7 @@
 ## INFORMATION
 **AUTHOR:** CHEN ZIQIAN <br>
 **DATE:**   December 2017 <br>
-**STU NO:** 140918481/jp2014212849
+
 ## INSTRUCTION
 To run the programme,
 1) Locate in the /code folder.
